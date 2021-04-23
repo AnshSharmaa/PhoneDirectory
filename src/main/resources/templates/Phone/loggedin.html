@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhoneDir Home</title>
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             <button onclick="window.location='signup';">Signup</button>
         </div>
         <br>
-        <form action="" method="POST">
+        <form th:object="${post}" th:action="@{/posts/create}" method="POST">
             <div id='formItems'>
                 <label>Name</label>
                 <input type="text" name="name" id="name">
@@ -32,6 +32,21 @@
 
             </div>
         </form>
+
+        <div id="posts">
+            <post th:each="p : ${posts}">
+                <div>
+                    Name: <h2 th:text="${p.name}"></h2>
+                    Email: <p th:text="${p.email}"></p>
+                    Phone: <h3 th:text="${p.phone}"></h3>
+                </div>
+                <div>
+                    <form th:action="@{/deletepost(postId=${p.id})}" th:method="delete">
+                        <input type="submit" value="DELETE" />
+                    </form>
+                </div>
+            </post>
+        </div>
 </body>
 
 </html>
