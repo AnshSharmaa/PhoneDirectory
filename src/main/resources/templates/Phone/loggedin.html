@@ -27,15 +27,15 @@
             <input type="email" name="email" id="email">
 
             <label>Phone number</label>
-            <input type="number" name="pnum" id="pnum">
+            <input type="number" name="phonenumber" id="phonenumber">
 
             <input type="submit" value="Submit">
 
         </div>
     </form>
 
-    <div id="posts">
-        <post th:each="p : ${posts}">
+    <div id="formItems2">
+        <post id="posts"th:each="p : ${posts}">
 
             <div>
                 <label> Name: </label>
