@@ -7,7 +7,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-
     color: white;
     background-color: #03396F;
     padding: 5px 0;
@@ -55,7 +54,7 @@ form {
 
 form:hover {
     background-color: #0b549c;
-    transition: background-color 0.3s ;
+    transition: background-color 0.3s;
 }
 
 h2 {
@@ -81,6 +80,13 @@ h2 {
     flex-direction: row;
     align-items: center;
 }
-span{
+
+span {
     color: white;
+}
+
+#posts {
+    background-color: #03396F;
+    margin: 10px;
+    padding: 10px;
 }
