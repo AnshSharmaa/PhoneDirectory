@@ -13,7 +13,7 @@ public class PhoneRepository {
         System.out.println("*** Phone Repository ***");
     }
 
-    @PersistenceUnit
+    @PersistenceUnit(unitName = "d4oqmli9plma42")
     private EntityManagerFactory entityManagerFactory;
 
     public List<Phone> getAllPosts(Integer userId) {

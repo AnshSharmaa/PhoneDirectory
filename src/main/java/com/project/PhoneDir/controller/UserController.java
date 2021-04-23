@@ -26,7 +26,7 @@ public class UserController {
     // POST Request to "/users/login"
     @RequestMapping(method = RequestMethod.POST, value = "/users/login")
     public String loginUser(User user, HttpSession session) {
-
+        System.out.println(user.getPassword() +  user.getUsername());
         User existingUser = userService.login(user);
 
         // check if the credentials match
@@ -53,7 +53,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, value = "/users/signup")
     public String userRegistration(User user) {
         // Business logic to save the credentials. of the users to teh given database
-        userService.registerUser(user);
+        boolean status = userService.registerUser(user);
         return "redirect:/users/login";
     }
 
