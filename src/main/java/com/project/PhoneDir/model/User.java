@@ -30,8 +30,6 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Phone> phone = new ArrayList<>();
 
-    public User() {
-    }
 
     // GETTERS AND SETTERS
 
